@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+<body>
+    <h1>form validation</h1>
+    <form name="myform" onsubmit="return valid()">
+        Name :- <input placeholder="full name" type="text" name="fullname"><br>
+        <hr>
+        Phone No : - 
+        <select name="" id="">
+            <option value="" selected disabled>+91</option>
+        </select>
+        <input placeholder="9265163966" type="tel" name="phone">
+        <hr>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function valid() {
+            let x = document.forms["myform"]["fullname"].value;
+            let y = document.forms["myform"]["phone"].value;
+            if (x =="" || y == ""){
+                alert("please enter Name and phoneno.....!");
+                return false;
+            }else if(x.length < 3 || x.length > 20){
+                alert("name should be 3 to 20  char+cters");
+            }else if(y.length |=10){
+                alert("phone number should be 10 digits");
+            }else if(isNaN(y)){
+                alert("phone number should be numberic");
+            }else{
+                alert("Name : - " + x + "\n" + "phone : -" + y);
+            }
+       }
+    </script>
+</body>
+</html>
